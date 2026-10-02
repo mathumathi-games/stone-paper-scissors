@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Stone Paper Scissors</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+
+<body>
+
+    <!-- HOME SCREEN -->
+    <div id="homeScreen">
+
+        <h1>🪨 📄 ✂️</h1>
+
+        <h2>STONE PAPER SCISSORS</h2>
+
+        <p>A Fun Game 🎮</p>
+
+        <button type="button" onclick="startGame()">
+            ▶️ START GAME
+        </button>
+
+    </div>
+
+
+    <!-- GAME SCREEN -->
+    <div id="gameScreen" style="display: none;">
+
+        <h1>🪨 Stone Paper Scissors ✂️</h1>
+
+        <p>Choose your move</p>
+
+        <div class="choiceButtons">
+
+            <button type="button" onclick="playGame('Stone')">
+                🪨 Stone
+            </button>
+
+            <button type="button" onclick="playGame('Paper')">
+                📄 Paper
+            </button>
+
+            <button type="button" onclick="playGame('Scissors')">
+                ✂️ Scissors
+            </button>
+
+        </div>
+
+
+        <div id="result">
+            Choose Stone, Paper or Scissors!
+        </div>
+
+
+        <div id="score">
+            You: 0 | Computer: 0
+        </div>
+
+
+        <div class="gameControls">
+
+            <button type="button" onclick="resetGame()">
+                🔄 Play Again
+            </button>
+
+            <button type="button" onclick="goHome()">
+                🏠 Back to Home
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+<script>
+    if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+            navigator.serviceWorker.register("service-worker.js");
+        });
+    }
+</script>
+</body>
+
+</html>
